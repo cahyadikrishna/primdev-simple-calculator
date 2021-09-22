@@ -45,7 +45,6 @@ function inputOperation(operation1) {
 // }
 
 function calculate() {
-  console.log("masuk");
   if (num1 !== "" && num2 !== "" && operation !== "") {
     if (operation === "+") {
       result = Number(num1) + Number(num2);
@@ -56,7 +55,6 @@ function calculate() {
     } else if (operation === "/") {
       result = Number(num1) / Number(num2);
     }
-    console.log(result);
     num1 = String(result);
     num2 = "";
     operation = "";
