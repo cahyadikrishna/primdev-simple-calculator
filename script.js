@@ -1,0 +1,64 @@
+let num1 = "";
+let num2 = "";
+let operation = "";
+let result = 0;
+
+const inputDisplay = document.getElementById("inputDisplay");
+const inputArea = document.getElementById("inputArea");
+
+function displayOutput() {
+  inputDisplay.value = `${num1} ${operation} ${num2}`;
+}
+
+function inputNumber(number) {
+  if (operation === "") {
+    num1 === "" ? (num1 = String(number)) : (num1 += String(number));
+    displayOutput();
+  } else {
+    num2 === "" ? (num2 = String(number)) : (num2 += String(number));
+    displayOutput();
+  }
+}
+
+function inputOperation(operation1) {
+  if (operation1 === "=") {
+    calculate();
+  } else if (num1 !== "") {
+    operation = operation1;
+    displayOutput();
+  }
+}
+
+inputArea.innerHTML = ``;
+for (i = 0; i < 10; i++) {
+  inputArea.innerHTML += `
+    <button onclick="inputNumber(${i})">${i}</button>
+  `;
+  if (i === 9) {
+    inputArea.innerHTML += `<button onclick="inputNumber('.')">.</button>`;
+    inputArea.innerHTML += `<button onclick="inputOperation('+')">+</button>`;
+    inputArea.innerHTML += `<button onclick="inputOperation('-')">-</button>`;
+    inputArea.innerHTML += `<button onclick="inputOperation('x')">x</button>`;
+    inputArea.innerHTML += `<button onclick="inputOperation('/')">/</button>`;
+    inputArea.innerHTML += `<button onclick="inputOperation('=')">=</button>`;
+  }
+}
+
+function calculate() {
+  console.log("masuk");
+  if (num1 !== "" && num2 !== "" && operation !== "") {
+    if (operation === "+") {
+      result = Number(num1) + Number(num2);
+    } else if (operation === "-") {
+      result = Number(num1) - Number(num2);
+    } else if (operation === "x") {
+      result = Number(num1) * Number(num2);
+    } else if (operation === "/") {
+      result = Number(num1) / Number(num2);
+    }
+    console.log(result);
+    num1 = String(result);
+    num2 = "";
+    operation = "";
+    displayOutput();
+  }
