@@ -29,20 +29,20 @@ function inputOperation(operation1) {
   }
 }
 
-inputArea.innerHTML = ``;
-for (i = 0; i < 10; i++) {
-  inputArea.innerHTML += `
-    <button onclick="inputNumber(${i})">${i}</button>
-  `;
-  if (i === 9) {
-    inputArea.innerHTML += `<button onclick="inputNumber('.')">.</button>`;
-    inputArea.innerHTML += `<button onclick="inputOperation('+')">+</button>`;
-    inputArea.innerHTML += `<button onclick="inputOperation('-')">-</button>`;
-    inputArea.innerHTML += `<button onclick="inputOperation('x')">x</button>`;
-    inputArea.innerHTML += `<button onclick="inputOperation('/')">/</button>`;
-    inputArea.innerHTML += `<button onclick="inputOperation('=')">=</button>`;
-  }
-}
+// inputArea.innerHTML = ``;
+// for (i = 0; i < 10; i++) {
+//   inputArea.innerHTML += `
+//     <button onclick="inputNumber(${i})">${i}</button>
+//   `;
+//   if (i === 9) {
+//     inputArea.innerHTML += `<button onclick="inputNumber('.')">.</button>`;
+//     inputArea.innerHTML += `<button onclick="inputOperation('+')">+</button>`;
+//     inputArea.innerHTML += `<button onclick="inputOperation('-')">-</button>`;
+//     inputArea.innerHTML += `<button onclick="inputOperation('x')">x</button>`;
+//     inputArea.innerHTML += `<button onclick="inputOperation('/')">/</button>`;
+//     inputArea.innerHTML += `<button onclick="inputOperation('=')">=</button>`;
+//   }
+// }
 
 function calculate() {
   console.log("masuk");
@@ -62,3 +62,4 @@ function calculate() {
     operation = "";
     displayOutput();
   }
+}
