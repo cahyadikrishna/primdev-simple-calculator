@@ -20,9 +20,20 @@ function inputNumber(number) {
   }
 }
 
+function clearDisplay(){
+  num1 = "";
+  num2 = "";
+  operation = "";
+  result = 0;
+  displayOutput();
+}
+
 function inputOperation(operation1) {
   if (operation1 === "=") {
     calculate();
+  } else if (operation1 === "c") {
+    operation = operation1;
+    clearDisplay();
   } else if (num1 !== "") {
     operation = operation1;
     displayOutput();
