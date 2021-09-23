@@ -51,16 +51,16 @@ function deleteInput(){
   displayOutput();
 }
 
-function inputOperation(operation1) {
-  if (operation1 === "=") {
+function inputOperation(action) {
+  if (action === "=") {
     calculate();
-  } else if (operation1 === "c") {
-    operation = operation1;
+  } else if (action === "c") {
+    operation = action;
     clearDisplay();
-  } else if (operation1 === "d") {
+  } else if (action === "d") {
     deleteInput();
   } else if (num1 !== "") {
-    operation = operation1;
+    operation = action;
     displayOutput();
   }
 }
