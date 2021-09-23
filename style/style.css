@@ -108,7 +108,7 @@
   color: #353535;
 }
 
-#hasil {
+#result {
   width: 25%;
   height: 90px;
   border: none;
@@ -119,12 +119,12 @@
   outline: none !important;
 }
 
-#hasil:hover {
+#result:hover {
   background-color: #dbd2d2;
   color: #ff6f6f;
 }
 
-#hasil:active {
+#result:active {
   background-color: #a39b9b;
   color: #ff5151;
 }
