@@ -28,12 +28,25 @@ function clearDisplay(){
   displayOutput();
 }
 
+function deleteInput(){
+  if(num2 !== ""){
+    num2 = num2.substring(0 , num2.length-1)
+  } else if (operation !== ""){
+    operation = "";
+  } else if (num1 !== ""){
+    num1 = num1.substring(0 , num1.length-1)
+  }
+  displayOutput();
+}
+
 function inputOperation(operation1) {
   if (operation1 === "=") {
     calculate();
   } else if (operation1 === "c") {
     operation = operation1;
     clearDisplay();
+  } else if (operation1 === "d") {
+    deleteInput();
   } else if (num1 !== "") {
     operation = operation1;
     displayOutput();
