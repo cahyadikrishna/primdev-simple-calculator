@@ -12,10 +12,22 @@ function displayOutput() {
 
 function inputNumber(number) {
   if (operation === "") {
-    num1 === "" ? (num1 = String(number)) : (num1 += String(number));
+    if(number === "."){
+      if(num1 !== "" && !num1.includes(".")){
+        num1 += String(number)
+      }
+    }else {
+      num1 === "" ? (num1 = String(number)) : (num1 += String(number))
+    }
     displayOutput();
   } else {
-    num2 === "" ? (num2 = String(number)) : (num2 += String(number));
+    if(number === "."){
+      if(num2 !== "" && !num2.includes(".")){
+        num2 += String(number)
+      }
+    }else {
+      num2 === "" ? (num2 = String(number)) : (num2 += String(number))
+    }
     displayOutput();
   }
 }
