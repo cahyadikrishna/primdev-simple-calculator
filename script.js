@@ -77,6 +77,17 @@ function clearDisplay() {
   displayOutput();
 }
 
+function deleteInput() {
+  if (num2 !== "") {
+    num2 = num2.substring(0, num2.length - 1);
+  } else if (operation !== "") {
+    operation = "";
+  } else if (num1 !== "") {
+    num1 = num1.substring(0, num1.length - 1);
+  }
+  displayOutput();
+}
+
 function addHistory(result) {
   if (localStorage.getItem("history") !== null) {
     history = JSON.parse(localStorage.getItem("history"));
@@ -97,3 +108,16 @@ function readHistory() {
   }
 }
 readHistory();
+
+function changeTheme(theme) {
+  let icon = document.querySelector("#themeIcon");
+  if (theme === "dark") {
+    icon.innerHTML = `<img onclick="changeTheme('light')" src="./icons/moon.svg" />`;
+  } else {
+    icon.innerHTML = `<img onclick="changeTheme('dark')" src="./icons/sun.svg" />`;
+  }
+
+  document.getElementById(
+    "colorLink"
+  ).href = `./style/color/${theme}-theme-color.css`;
+}
